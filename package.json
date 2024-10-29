@@ -1,0 +1,52 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "NODE_ENV=development node build",
+    "start:dev": "npx nodemon",
+    "start": "npm run build && node build/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pm2": "pm2 start ./src/index.ts --watch",
+    "db:migrate": "npx prisma migrate dev --name user-entity --create-only && yarn prisma generate"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/config": "^3.3.3",
+    "@types/cookie-parser": "^1.4.6",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.1",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^20.10.1",
+    "@types/nodemailer": "^6.4.14",
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.3.2"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.6.0",
+    "axios": "^1.6.8",
+    "bcryptjs": "^2.4.3",
+    "config": "^3.3.9",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "envalid": "^8.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.13",
+    "prisma": "^5.6.0",
+    "stripe": "^14.22.0",
+    "xlsx": "^0.18.5",
+    "zod": "^3.22.4"
+  }
+}
