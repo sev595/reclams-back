@@ -32,8 +32,8 @@ enum RoleEnumType {
   admin
 }
 
-model Reclams {
-  @@map(name: "reclams")
+model Post {
+  @@map(name: "post")
   id            Int       @id @default(autoincrement())
   title         String    @db.VarChar(255)
   description   String    @db.VarChar(255)

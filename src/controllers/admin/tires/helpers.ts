@@ -1,43 +1,27 @@
-export const ClearCreateTireDataHelper = (body: any) => {
+export const ClearCreatePostDataHelper = (body: any) => {
   const {
-    tireWidth,
-    tireAspectRatio,
-    rimDiameter,
-    marka,
-    stock,
+    title,
+    description,
     imageUrl,
-    price,
   } = body;
 
   return {
-    tireWidth: Number(tireWidth),
-    tireAspectRatio: Number(tireAspectRatio),
-    rimDiameter: Number(rimDiameter),
-    marka,
-    stock: Number(stock),
-    imageUrl,
-    price: Number(price),
+    title,
+    description,
+    imageUrl
   };
 };
 
-export const ClearUpdateTireDataHelper = (body: any) => {
+export const ClearUpdatePostDataHelper = (body: any) => {
   const {
-    tireWidth,
-    tireAspectRatio,
-    rimDiameter,
-    marka,
-    stock,
+    title,
+    description,
     imageUrl,
-    price,
   } = body;
 
   return {
-    tireWidth: Number(tireWidth),
-    tireAspectRatio: Number(tireAspectRatio),
-    rimDiameter: Number(rimDiameter),
-    marka,
-    stock: Number(stock),
-    imageUrl,
-    price: Number(price),
+    title,
+    description,
+    imageUrl
   };
 };

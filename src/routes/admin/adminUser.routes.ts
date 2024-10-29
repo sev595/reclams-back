@@ -1,5 +1,4 @@
 import express from "express";
-import { getUserOrdersListHandler } from "../../controllers/admin/orders/adminOrders.controller";
 import {
   createUserHandler,
   deleteUserHandler,
@@ -14,9 +13,6 @@ const router = express.Router();
 router.use(VerifyJWTToken);
 // Route to create a new order
 router.post("/create", createUserHandler);
-
-// Route to get user's orders list
-router.get("/user/:id", getUserOrdersListHandler);
 
 // Route to get all orders
 router.get("/all", getAllUsersHandler);

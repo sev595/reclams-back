@@ -1,23 +1,20 @@
-import { Tire } from '@prisma/client';
+import { Post } from '@prisma/client';
 import { Request, Response } from 'express';
 
-export interface TireData {
-  tireWidth: number;
-  tireAspectRatio: number;
-  rimDiameter: number;
-  marka: string;
-  stock: number;
+export interface PostData {
+  title:string;
+  description:string;
   imageUrl: string;
 }
 
-export interface TireResponse {
+export interface PostResponse {
   status: string;
-  data: { tire: Tire };
+  data: { Post: Post };
 }
 
-export interface TiresResponse {
+export interface PostsResponse {
   status: string;
-  data: { tires: Tire[] };
+  data: { posts: Post[] };
 }
 
 export interface ErrorResponse {
@@ -25,8 +22,8 @@ export interface ErrorResponse {
   message: string;
 }
 
-export type CreateTireHandler = (req: Request, res: Response) => Promise<void>;
-export type GetAllTiresHandler = (req: Request, res: Response) => Promise<void>;
-export type GetTireByIdHandler = (req: Request, res: any) => Promise<void>;
-export type UpdateTireHandler = (req: Request, res: Response) => Promise<void>;
-export type DeleteTireHandler = (req: Request, res: Response) => Promise<void>;
+export type CreatePostHandler = (req: Request, res: Response) => Promise<void>;
+export type GetAllPostsHandler = (req: Request, res: Response) => Promise<void>;
+export type GetPostByIdHandler = (req: Request, res: any) => Promise<void>;
+export type UpdatePostHandler = (req: Request, res: Response) => Promise<void>;
+export type DeletePostHandler = (req: Request, res: Response) => Promise<void>;

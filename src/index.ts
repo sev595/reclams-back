@@ -10,7 +10,8 @@ import validateEnv from "./utils/validateEnv";
 import authRouter from "./routes/auth.routes";
 // import userRouter from "./routes/user.routes";
 // import searchRouter from "./routes/search.router";
-// import adminUserRouter from "./routes/admin/adminUser.routes";
+import adminUserRouter from "./routes/admin/adminUser.routes";
+import adminPostsRouter from "./routes/admin/adminPost.routes";
 
 // import nodemailer from 'nodemailer';
 // (async function () {
@@ -51,7 +52,8 @@ async function bootstrap() {
   app.use("/api/auth", authRouter);
   // app.use("/api/users", userRouter);
   // app.use("/api/search", searchRouter);
-  // app.use("/api/admin/users", adminUserRouter);
+  app.use("/api/admin/users", adminUserRouter);
+  app.use("/api/admin/posts", adminPostsRouter);
 
   // Testing
   app.get("/api/healthchecker", (_, res: Response) => {
@@ -94,6 +96,3 @@ bootstrap()
   .finally(async () => {
     await prisma.$disconnect();
   });
-
-// postgres=# ALTER USER postgres WITH PASSWORD 'pass123';
-// postgres=# CREATE USER user_1 WITH PASSWORD 'pass123';

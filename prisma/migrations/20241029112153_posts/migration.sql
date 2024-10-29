@@ -22,13 +22,13 @@ CREATE TABLE "User" (
 );
 
 -- CreateTable
-CREATE TABLE "reclams" (
+CREATE TABLE "post" (
     "id" SERIAL NOT NULL,
     "title" VARCHAR(255) NOT NULL,
     "description" VARCHAR(255) NOT NULL,
     "imageUrl" VARCHAR(1000) NOT NULL,
 
-    CONSTRAINT "reclams_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "post_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex
