@@ -9,7 +9,7 @@ import validateEnv from "./utils/validateEnv";
 
 import authRouter from "./routes/auth.routes";
 // import userRouter from "./routes/user.routes";
-// import searchRouter from "./routes/search.router";
+import searchRouter from "./routes/search.router";
 import adminUserRouter from "./routes/admin/adminUser.routes";
 import adminPostsRouter from "./routes/admin/adminPost.routes";
 
@@ -51,7 +51,7 @@ async function bootstrap() {
   // ROUTES
   app.use("/api/auth", authRouter);
   // app.use("/api/users", userRouter);
-  // app.use("/api/search", searchRouter);
+  app.use("/api/search", searchRouter);
   app.use("/api/admin/users", adminUserRouter);
   app.use("/api/admin/posts", adminPostsRouter);
 

@@ -1,10 +1,10 @@
 import express from "express";
 import {
-  generalSearch
-} from "../controllers/filters.controller";
+  search
+} from "../controllers/admin/search/search.controller";
 
 const router = express.Router();
 
-router.get("/general-search", generalSearch);
+router.get("/search", search);
 
 export default router;
