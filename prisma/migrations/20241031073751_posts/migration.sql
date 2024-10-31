@@ -25,8 +25,13 @@ CREATE TABLE "User" (
 CREATE TABLE "post" (
     "id" SERIAL NOT NULL,
     "title" VARCHAR(255) NOT NULL,
-    "description" VARCHAR(255) NOT NULL,
-    "imageUrl" VARCHAR(1000) NOT NULL,
+    "featureImg" VARCHAR(1000) NOT NULL,
+    "postFormat" VARCHAR(50) NOT NULL,
+    "slidePost" BOOLEAN NOT NULL DEFAULT false,
+    "date" TIMESTAMP(3) NOT NULL,
+    "slug" VARCHAR(255),
+    "featured" BOOLEAN NOT NULL DEFAULT false,
+    "description" VARCHAR(255),
 
     CONSTRAINT "post_pkey" PRIMARY KEY ("id")
 );
@@ -45,3 +50,6 @@ CREATE INDEX "User_email_verificationCode_passwordResetToken_idx" ON "User"("ema
 
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_verificationCode_passwordResetToken_key" ON "User"("email", "verificationCode", "passwordResetToken");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "post_slug_key" ON "post"("slug");

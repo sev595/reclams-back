@@ -1,6 +1,6 @@
 import express from "express";
 import { VerifyJWTToken } from "../../services/jwt/verifyJWTToken";
-import { createPostHandler, deletePostHandler, getAllPostsHandler, getPostByIdHandler, updatePostHandler } from "../../controllers/admin/tires/adminPosts.controller";
+import { createPostHandler, deletePostHandler, getAllPostsHandler, getPostByIdHandler, updatePostHandler } from "../../controllers/admin/posts/adminPosts.controller";
 
 const router = express.Router();
 router.use(VerifyJWTToken);

@@ -33,9 +33,15 @@ enum RoleEnumType {
 }
 
 model Post {
-  @@map(name: "post")
   id            Int       @id @default(autoincrement())
   title         String    @db.VarChar(255)
-  description   String    @db.VarChar(255)
-  imageUrl      String    @db.VarChar(1000)
+  featureImg    String    @db.VarChar(1000) // To store image URLs
+  postFormat    String    @db.VarChar(50)   // Format of the post (e.g., "standard", "video", etc.)
+  slidePost     Boolean   @default(false)   // If it is a slide post
+  date          DateTime  // Date of the post
+  slug          String?   @unique @db.VarChar(255) // URL slug for the post
+  featured      Boolean   @default(false)   // If the post is marked as featured
+  description   String?   @db.VarChar(255)  // Optional short description
+
+  @@map("post") // Maintains original table name
 }
